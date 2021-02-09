@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, Button, Alert } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
-import PrivateRoute from './PrivateRoute'
+// import PrivateRoute from './PrivateRoute'
 
 export default function Dashboard() {
   const [error, setError] = useState('')
