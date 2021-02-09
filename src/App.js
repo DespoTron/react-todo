@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
+import ForgotPassword from './components/ForgotPassword'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               {/* <PrivateRoute path="/update-profile" component={UpdateProfile} />               */}
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </Router>
