@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import ForgotPassword from './components/ForgotPassword'
 import UpdateProfile from './components/UpdateProfile'
+import TodoForm from './components/TodoForm'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute path="/todo-form" component={TodoForm} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
