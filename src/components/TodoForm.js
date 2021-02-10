@@ -6,13 +6,14 @@ import '../index.css'
 
 export default function TodoForm() {
   const [inputText, setInputText] = useState('')
+  const [todos, setTodos] = useState([])
 
   return (
     <div className="App">
       <header>
         <h1>Thai's Todo List</h1>
       </header>
-      <Form />
+      <Form {...{ inputText, setInputText, todos, setTodos }} />
       <TodoList />
     </div>
   )
