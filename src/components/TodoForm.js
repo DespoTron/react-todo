@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Form from './Form'
 import TodoList from './TodoList'
+import { db } from '../firebase'
 // import '../App.css'
 
 export default function TodoForm() {
@@ -9,6 +10,16 @@ export default function TodoForm() {
   const [todos, setTodos] = useState([])
   const [status, setStatus] = useState('all')
   const [filteredTodos, setFilteredTodos] = useState([])
+
+  useEffect(() => {
+    db.collection('todos').onSnapshot((snapshot) => {
+      console.log(
+        'snapshot.docs.map((doc) => doc.data():',
+        snapshot.docs.map((doc) => doc.data())
+      )
+      setTodos(snapshot.docs.map((doc) => doc.data().todo))
+    })
+  }, [])
 
   useEffect(() => {
     filterHandler()
