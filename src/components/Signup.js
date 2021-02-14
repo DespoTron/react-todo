@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Card, Form, Button, Alert } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import '../index.css'
 
 export default function Signup() {
   const emailRef = useRef()
@@ -32,7 +33,7 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
+      <Card className="App">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}

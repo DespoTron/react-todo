@@ -2,19 +2,24 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Form from './Form'
 import TodoList from './TodoList'
-import '../index.css'
+// import '../App.css'
 
 export default function TodoForm() {
   const [inputText, setInputText] = useState('')
   const [todos, setTodos] = useState([])
 
   return (
-    <div className="App">
+    <div className="todo-form">
       <header>
         <h1>Thai's Todo List</h1>
       </header>
-      <Form {...{ inputText, setInputText, todos, setTodos }} />
-      <TodoList />
+      <Form
+        inputText={inputText}
+        setInputText={setInputText}
+        todos={todos}
+        setTodos={setTodos}
+      />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   )
 }
